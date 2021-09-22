@@ -1,0 +1,9 @@
+{
+	"name": "AzureDataFactoryWTC",
+	"location": "ukwest",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "0a22e5ba-f138-4870-9797-cbf12c92097a",
+		"tenantId": "ce6e45c5-2d08-45c3-81f6-91005a2cef34"
+	}
+}
