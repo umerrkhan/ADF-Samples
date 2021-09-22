@@ -1,0 +1,53 @@
+{
+	"name": "Employee",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "linkedservice_sqlserver_wtm",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "row_number",
+				"type": "varchar"
+			},
+			{
+				"name": "empno",
+				"type": "varchar"
+			},
+			{
+				"name": "ename",
+				"type": "varchar"
+			},
+			{
+				"name": "job",
+				"type": "varchar"
+			},
+			{
+				"name": "mgr",
+				"type": "varchar"
+			},
+			{
+				"name": "hiredate",
+				"type": "varchar"
+			},
+			{
+				"name": "sal",
+				"type": "varchar"
+			},
+			{
+				"name": "comm",
+				"type": "varchar"
+			},
+			{
+				"name": "deptno",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Employee"
+		}
+	}
+}
