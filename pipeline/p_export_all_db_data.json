@@ -115,6 +115,41 @@
 						}
 					]
 				}
+			},
+			{
+				"name": "GetBatchdate",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderStoredProcedureName": "[ETL].[p_GetBatchdate]",
+						"storedProcedureParameters": {
+							"pBatch_key": {
+								"type": "Int32",
+								"value": "10"
+							}
+						},
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "DS_ASQL_GENERIC",
+						"type": "DatasetReference",
+						"parameters": {
+							"Schema_Name": "etl",
+							"TableName": "etl"
+						}
+					}
+				}
 			}
 		],
 		"annotations": []
