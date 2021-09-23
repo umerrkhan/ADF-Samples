@@ -74,7 +74,7 @@
 							"type": "Lookup",
 							"dependsOn": [
 								{
-									"activity": "ForEach1",
+									"activity": "setBatchDate",
 									"dependencyConditions": [
 										"Succeeded"
 									]
@@ -103,11 +103,11 @@
 							}
 						},
 						{
-							"name": "ForEach1",
+							"name": "ExtractTable",
 							"type": "ForEach",
 							"dependsOn": [
 								{
-									"activity": "setBatchDate",
+									"activity": "List_of_tables",
 									"dependencyConditions": [
 										"Succeeded"
 									]
@@ -180,7 +180,7 @@
 												"parameters": {
 													"Directory": "Target",
 													"CSVFileName": {
-														"value": "@item().TABLE_NAME",
+														"value": "@concat( item().TABLE_NAME, variables('pDateVariable'), '.csv')",
 														"type": "Expression"
 													}
 												}
