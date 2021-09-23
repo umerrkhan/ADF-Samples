@@ -52,7 +52,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('GetBatchdate').output",
+						"value": "@activity('GetBatchdate').output.value",
 						"type": "Expression"
 					},
 					"isSequential": true,
