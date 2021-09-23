@@ -34,7 +34,8 @@
 							"Schema_Name": "etl",
 							"TableName": "etl"
 						}
-					}
+					},
+					"firstRowOnly": false
 				}
 			},
 			{
@@ -51,7 +52,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('GetBatchdate').output.value",
+						"value": "@activity('GetBatchdate').output",
 						"type": "Expression"
 					},
 					"isSequential": true,
