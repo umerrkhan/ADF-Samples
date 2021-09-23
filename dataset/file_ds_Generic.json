@@ -5,12 +5,20 @@
 			"referenceName": "linkedservice_AzureStorageAccount_wtc",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"ds_param_adbs": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "TablesonDB.csv",
+				"fileName": {
+					"value": "@concat('Tables-in-sql-db-', formatDateTime(utcnow(), 'yyyy-dd-MM'))",
+					"type": "Expression"
+				},
 				"folderPath": "target",
 				"container": "data"
 			},
