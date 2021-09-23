@@ -5,11 +5,6 @@
 			"referenceName": "linkedservice_AzureStorageAccount_wtc",
 			"type": "LinkedServiceReference"
 		},
-		"parameters": {
-			"ds_param_adbs": {
-				"type": "string"
-			}
-		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
