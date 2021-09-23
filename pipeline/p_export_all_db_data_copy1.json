@@ -1,0 +1,190 @@
+{
+	"name": "p_export_all_db_data_copy1",
+	"properties": {
+		"activities": [
+			{
+				"name": "GetBatchdate",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderStoredProcedureName": "[ETL].[p_GetBatchdate]",
+						"storedProcedureParameters": {
+							"pBatch_key": {
+								"type": "Int32",
+								"value": "10"
+							}
+						},
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "DS_ASQL_GENERIC",
+						"type": "DatasetReference",
+						"parameters": {
+							"Schema_Name": "etl",
+							"TableName": "etl"
+						}
+					}
+				}
+			},
+			{
+				"name": "SetBatch",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "GetBatchdate",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('List_of_tables').output.value",
+						"type": "Expression"
+					},
+					"isSequential": true,
+					"activities": [
+						{
+							"name": "setBatchDate",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "pDateVariable",
+								"value": {
+									"value": "@item().Batch_Date",
+									"type": "Expression"
+								}
+							}
+						},
+						{
+							"name": "List_of_tables",
+							"type": "Lookup",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "AzureSqlSource",
+									"sqlReaderQuery": "Select *\nFROM [azure-sql-db].INFORMATION_SCHEMA.TABLES\nWhere table_type = 'BASE TABLE'",
+									"queryTimeout": "02:00:00",
+									"partitionOption": "None"
+								},
+								"dataset": {
+									"referenceName": "sqltable_Generic",
+									"type": "DatasetReference"
+								},
+								"firstRowOnly": false
+							}
+						},
+						{
+							"name": "ForEach1",
+							"type": "ForEach",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"items": {
+									"value": "@activity('List_of_tables').output.value",
+									"type": "Expression"
+								},
+								"isSequential": false,
+								"activities": [
+									{
+										"name": "Copy data1",
+										"type": "Copy",
+										"dependsOn": [],
+										"policy": {
+											"timeout": "7.00:00:00",
+											"retry": 0,
+											"retryIntervalInSeconds": 30,
+											"secureOutput": false,
+											"secureInput": false
+										},
+										"userProperties": [],
+										"typeProperties": {
+											"source": {
+												"type": "AzureSqlSource",
+												"queryTimeout": "02:00:00",
+												"partitionOption": "None"
+											},
+											"sink": {
+												"type": "DelimitedTextSink",
+												"storeSettings": {
+													"type": "AzureBlobStorageWriteSettings"
+												},
+												"formatSettings": {
+													"type": "DelimitedTextWriteSettings",
+													"quoteAllText": true,
+													"fileExtension": ".txt"
+												}
+											},
+											"enableStaging": false,
+											"translator": {
+												"type": "TabularTranslator",
+												"typeConversion": true,
+												"typeConversionSettings": {
+													"allowDataTruncation": true,
+													"treatBooleanAsNumber": false
+												}
+											}
+										},
+										"inputs": [
+											{
+												"referenceName": "DS_ASQL_GENERIC",
+												"type": "DatasetReference",
+												"parameters": {
+													"Schema_Name": {
+														"value": "@item().TABLE_SCHEMA",
+														"type": "Expression"
+													},
+													"TableName": "@item().TABLE_NAME"
+												}
+											}
+										],
+										"outputs": [
+											{
+												"referenceName": "DS_ADLS_GENERIC",
+												"type": "DatasetReference",
+												"parameters": {
+													"Directory": "Target",
+													"CSVFileName": {
+														"value": "@item().TABLE_NAME",
+														"type": "Expression"
+													}
+												}
+											}
+										]
+									}
+								]
+							}
+						}
+					]
+				}
+			}
+		],
+		"variables": {
+			"pDateVariable": {
+				"type": "String"
+			}
+		},
+		"annotations": []
+	}
+}
