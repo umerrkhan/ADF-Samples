@@ -16,15 +16,10 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "DelimitedTextSource",
-						"storeSettings": {
-							"type": "AzureBlobStorageReadSettings",
-							"recursive": true,
-							"enablePartitionDiscovery": false
-						},
-						"formatSettings": {
-							"type": "DelimitedTextReadSettings"
-						}
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": "Select *\nFROM [azure-sql-db].INFORMATION_SCHEMA.TABLES\nWhere table_type = 'BASE TABLE'",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
 					},
 					"sink": {
 						"type": "AzureSqlSink"
@@ -151,7 +146,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "file_ds_emp",
+						"referenceName": "sqltable_Generic",
 						"type": "DatasetReference"
 					}
 				],

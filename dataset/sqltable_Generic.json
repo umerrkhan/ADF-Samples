@@ -1,0 +1,12 @@
+{
+	"name": "sqltable_Generic",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "linkedservice_sqlserver_wtm",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	}
+}

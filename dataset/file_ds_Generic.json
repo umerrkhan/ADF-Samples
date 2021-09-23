@@ -1,0 +1,24 @@
+{
+	"name": "file_ds_Generic",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "linkedservice_AzureStorageAccount_wtc",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "TablesonDB.csv",
+				"folderPath": "target",
+				"container": "data"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
