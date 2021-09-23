@@ -51,7 +51,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('List_of_tables').output.value",
+						"value": "@activity('GetBatchdate').output.value",
 						"type": "Expression"
 					},
 					"isSequential": true,
