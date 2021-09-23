@@ -106,11 +106,6 @@
 				]
 			}
 		],
-		"variables": {
-			"v_run_ts": {
-				"type": "String"
-			}
-		},
 		"annotations": []
 	}
 }
