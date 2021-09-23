@@ -1,5 +1,5 @@
 {
-	"name": "sqltable_Employee",
+	"name": "sqltable_ds_Employee",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "linkedservice_sqlserver_wtm",

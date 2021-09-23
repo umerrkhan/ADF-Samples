@@ -151,13 +151,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "fileds_emp",
+						"referenceName": "file_ds_emp",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "sqltable_Employee",
+						"referenceName": "sqltable_ds_Employee",
 						"type": "DatasetReference"
 					}
 				]

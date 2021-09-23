@@ -1,5 +1,5 @@
 {
-	"name": "fileds_emp",
+	"name": "file_ds_emp",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "linkedservice_AzureStorageAccount_wtc",
