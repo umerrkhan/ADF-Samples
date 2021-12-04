@@ -14,6 +14,12 @@
 					"secureInput": false
 				},
 				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Users/umerr.farooq@hotmail.com/Coursera/12-Production-Workloads-with-Azure-Data-Factory/Record-Run",
+					"baseParameters": {
+						"ranBy": "ADF"
+					}
+				},
 				"linkedServiceName": {
 					"referenceName": "linkedservice_DB",
 					"type": "LinkedServiceReference"
