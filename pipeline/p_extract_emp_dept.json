@@ -46,7 +46,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('GetFileNames').output.chileitems = 'csv'",
+						"value": "@activity('GetFileNames').output.childItems",
 						"type": "Expression"
 					},
 					"condition": {
