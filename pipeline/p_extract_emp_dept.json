@@ -46,7 +46,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('GetFileNames').output.childItems.name",
+						"value": "@activity('GetFileNames').output.childItems",
 						"type": "Expression"
 					},
 					"condition": {
