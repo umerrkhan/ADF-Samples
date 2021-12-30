@@ -46,11 +46,11 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('GetFileNames').output.childItems",
+						"value": "@activity('GetFileNames').output",
 						"type": "Expression"
 					},
 					"condition": {
-						"value": "@equals( activity('GetFileNames').output.childItems ,'csv')",
+						"value": "@equals(item().name,\"emp.csv\" )",
 						"type": "Expression"
 					}
 				}
