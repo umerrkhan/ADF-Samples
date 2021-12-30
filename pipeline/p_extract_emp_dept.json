@@ -50,7 +50,7 @@
 						"type": "Expression"
 					},
 					"condition": {
-						"value": "@equals(item().name,\"emp.csv\" )",
+						"value": "@equals(item().name,'emp.csv' )",
 						"type": "Expression"
 					}
 				}
