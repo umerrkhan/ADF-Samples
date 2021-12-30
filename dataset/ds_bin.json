@@ -1,0 +1,17 @@
+{
+	"name": "ds_bin",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_strg_accnt",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "sourcedata"
+			}
+		}
+	}
+}
