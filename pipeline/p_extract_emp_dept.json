@@ -98,7 +98,7 @@
 											}
 										},
 										"sink1": {
-											"Foldername": "target"
+											"TargetFileName": "target"
 										}
 									}
 								},
