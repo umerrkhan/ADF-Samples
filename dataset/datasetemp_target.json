@@ -10,7 +10,6 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "Final.txt",
 				"container": "target"
 			},
 			"columnDelimiter": ",",
