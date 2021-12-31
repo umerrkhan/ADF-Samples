@@ -8,7 +8,7 @@
 		"parameters": {
 			"Foldername": {
 				"type": "string",
-				"defaultValue": "sourcedata"
+				"defaultValue": "FileName"
 			}
 		},
 		"annotations": [],
@@ -16,7 +16,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "emp_dept.csv",
+				"fileName": {
+					"value": "@dataset().Foldername",
+					"type": "Expression"
+				},
 				"container": {
 					"value": "@dataset().Foldername",
 					"type": "Expression"
