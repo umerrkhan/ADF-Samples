@@ -6,7 +6,7 @@
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"Foldername": {
+			"FileName": {
 				"type": "string",
 				"defaultValue": "FileName"
 			}

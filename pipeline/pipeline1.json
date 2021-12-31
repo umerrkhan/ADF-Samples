@@ -20,7 +20,7 @@
 						"type": "DataFlowReference",
 						"datasetParameters": {
 							"source1": {
-								"Foldername": "sourcedata"
+								"FileName": "sourcedata"
 							},
 							"sink1": {
 								"Foldername": "target"
