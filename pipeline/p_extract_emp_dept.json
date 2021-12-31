@@ -98,7 +98,7 @@
 											}
 										},
 										"sink1": {
-											"TargetFileName": "target"
+											"TargetFileName": "@item().name"
 										}
 									}
 								},
