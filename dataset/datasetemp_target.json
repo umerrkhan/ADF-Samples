@@ -1,0 +1,62 @@
+{
+	"name": "datasetemp_target",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_strg_accnt",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"Foldername": {
+				"type": "string",
+				"defaultValue": "target"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "emp_dept.csv",
+				"container": {
+					"value": "@dataset().Foldername",
+					"type": "Expression"
+				}
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			}
+		]
+	}
+}
