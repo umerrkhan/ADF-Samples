@@ -17,13 +17,10 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"fileName": {
-					"value": "@dataset().Foldername",
+					"value": "@dataset().FileName",
 					"type": "Expression"
 				},
-				"container": {
-					"value": "@dataset().Foldername",
-					"type": "Expression"
-				}
+				"container": "sourcedata"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
