@@ -92,7 +92,10 @@
 									"type": "DataFlowReference",
 									"datasetParameters": {
 										"source1": {
-											"FileName": "sourcedata"
+											"FileName": {
+												"value": "@item().name",
+												"type": "Expression"
+											}
 										},
 										"sink1": {
 											"Foldername": "target"
