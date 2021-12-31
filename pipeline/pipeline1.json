@@ -21,9 +21,6 @@
 						"datasetParameters": {
 							"source1": {
 								"FileName": "sourcedata"
-							},
-							"sink1": {
-								"TargetFileName": "target"
 							}
 						}
 					},

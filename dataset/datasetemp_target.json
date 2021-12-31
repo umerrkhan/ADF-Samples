@@ -5,21 +5,11 @@
 			"referenceName": "ls_strg_accnt",
 			"type": "LinkedServiceReference"
 		},
-		"parameters": {
-			"TargetFileName": {
-				"type": "string",
-				"defaultValue": "target"
-			}
-		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": {
-					"value": "@dataset().TargetFileName",
-					"type": "Expression"
-				},
 				"container": "target"
 			},
 			"columnDelimiter": ",",

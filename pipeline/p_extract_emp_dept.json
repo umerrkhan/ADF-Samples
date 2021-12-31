@@ -96,9 +96,6 @@
 												"value": "@item().name",
 												"type": "Expression"
 											}
-										},
-										"sink1": {
-											"TargetFileName": "@item().name"
 										}
 									}
 								},
