@@ -16,10 +16,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"container": {
-					"value": "@dataset().Foldername",
-					"type": "Expression"
-				}
+				"fileName": "@item().name",
+				"container": "target"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
