@@ -16,7 +16,6 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "emp_dept.csv",
 				"container": {
 					"value": "@dataset().Foldername",
 					"type": "Expression"
