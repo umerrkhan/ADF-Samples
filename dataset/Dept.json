@@ -1,5 +1,5 @@
 {
-	"name": "DelimitedText1",
+	"name": "Dept",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ls_strg_accnt",
