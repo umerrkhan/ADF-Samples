@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "AzureDataFactoryWTC"
+		},
+		"linkedService_AzureDatabricksDeltaLake1_accessToken": {
+			"value": ""
+		},
+		"linkedservice_AzureStorageAccount_wtc_connectionString": {
+			"value": ""
+		},
+		"linkedservice_DB_accessToken": {
+			"value": ""
+		},
+		"linkedservice_sqlserver_wtm_connectionString": {
+			"value": ""
+		},
+		"ls_strg_accnt_sasUri": {
+			"value": ""
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
