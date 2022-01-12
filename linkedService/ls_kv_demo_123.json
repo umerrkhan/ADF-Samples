@@ -1,0 +1,10 @@
+{
+	"name": "ls_kv_demo_123",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://kv-demo-123.vault.azure.net/"
+		}
+	}
+}
