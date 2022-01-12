@@ -1,0 +1,173 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "AzureDataFactoryWTC"
+		},
+		"Office3651_servicePrincipalKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'servicePrincipalKey' of 'Office3651'"
+		},
+		"linkedService_AzureDatabricksDeltaLake1_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'linkedService_AzureDatabricksDeltaLake1'"
+		},
+		"linkedservice_AzureStorageAccount_wtc_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'linkedservice_AzureStorageAccount_wtc'"
+		},
+		"linkedservice_DB_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'linkedservice_DB'"
+		},
+		"linkedservice_sqlserver_wtm_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'linkedservice_sqlserver_wtm'"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://kvdemo-123.vault.azure.net/"
+		},
+		"Office3651_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "umer"
+		},
+		"ls_4_kv_kvdemo123_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://kvdemo-123.vault.azure.net/"
+		},
+		"ls_akvm_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://kvdemo-123.vault.azure.net/"
+		},
+		"ls_kv_demo_123_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://kv-demo-123.vault.azure.net/"
+		},
+		"ls_kv_kv123_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://kvdemo-123.vault.azure.net/"
+		},
+		"ls_kv_sql_properties_typeProperties_connectionString_secretName": {
+			"type": "string",
+			"defaultValue": "SecretAzureSqlDatabase"
+		},
+		"ls_strg_accnt_sasUri": {
+			"type": "secureString",
+			"metadata": "Secure string for 'sasUri' of 'ls_strg_accnt'"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "AzureDataFactoryWTC_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"Office3651_servicePrincipalKey": {
+						"value": "[parameters('Office3651_servicePrincipalKey')]"
+					},
+					"linkedService_AzureDatabricksDeltaLake1_accessToken": {
+						"value": "[parameters('linkedService_AzureDatabricksDeltaLake1_accessToken')]"
+					},
+					"linkedservice_AzureStorageAccount_wtc_connectionString": {
+						"value": "[parameters('linkedservice_AzureStorageAccount_wtc_connectionString')]"
+					},
+					"linkedservice_DB_accessToken": {
+						"value": "[parameters('linkedservice_DB_accessToken')]"
+					},
+					"linkedservice_sqlserver_wtm_connectionString": {
+						"value": "[parameters('linkedservice_sqlserver_wtm_connectionString')]"
+					},
+					"AzureKeyVault1_properties_typeProperties_baseUrl": {
+						"value": "[parameters('AzureKeyVault1_properties_typeProperties_baseUrl')]"
+					},
+					"Office3651_properties_typeProperties_servicePrincipalId": {
+						"value": "[parameters('Office3651_properties_typeProperties_servicePrincipalId')]"
+					},
+					"ls_4_kv_kvdemo123_properties_typeProperties_baseUrl": {
+						"value": "[parameters('ls_4_kv_kvdemo123_properties_typeProperties_baseUrl')]"
+					},
+					"ls_akvm_properties_typeProperties_baseUrl": {
+						"value": "[parameters('ls_akvm_properties_typeProperties_baseUrl')]"
+					},
+					"ls_kv_demo_123_properties_typeProperties_baseUrl": {
+						"value": "[parameters('ls_kv_demo_123_properties_typeProperties_baseUrl')]"
+					},
+					"ls_kv_kv123_properties_typeProperties_baseUrl": {
+						"value": "[parameters('ls_kv_kv123_properties_typeProperties_baseUrl')]"
+					},
+					"ls_strg_accnt_sasUri": {
+						"value": "[parameters('ls_strg_accnt_sasUri')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "AzureDataFactoryWTC_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"ls_kv_sql_properties_typeProperties_connectionString_secretName": {
+						"value": "[parameters('ls_kv_sql_properties_typeProperties_connectionString_secretName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'AzureDataFactoryWTC_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "AzureDataFactoryWTC_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'AzureDataFactoryWTC_ArmTemplate_1')]"
+			]
+		}
+	]
+}
