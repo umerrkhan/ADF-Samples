@@ -101,7 +101,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "DelimitedText",
+									"referenceName": "mySourceDataset",
 									"type": "DatasetReference",
 									"parameters": {
 										"myDelimitedTextFilename": {
