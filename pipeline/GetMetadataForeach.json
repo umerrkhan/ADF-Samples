@@ -83,7 +83,13 @@
 							"inputs": [
 								{
 									"referenceName": "DelimitedText",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"myDelimitedTextFilename": {
+											"value": "@item().childItems.name",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						}
