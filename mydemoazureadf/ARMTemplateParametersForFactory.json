@@ -1,0 +1,54 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "mydemoazureadf"
+		},
+		"Office3651_servicePrincipalKey": {
+			"value": ""
+		},
+		"linkedService_AzureDatabricksDeltaLake1_accessToken": {
+			"value": ""
+		},
+		"linkedservice_AzureStorageAccount_wtc_connectionString": {
+			"value": ""
+		},
+		"linkedservice_DB_accessToken": {
+			"value": ""
+		},
+		"linkedservice_sqlserver_wtm_connectionString": {
+			"value": ""
+		},
+		"mylinkedservice_connectionString": {
+			"value": ""
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"value": "https://kvdemo-123.vault.azure.net/"
+		},
+		"Office3651_properties_typeProperties_servicePrincipalId": {
+			"value": "umer"
+		},
+		"linkedservice_DB_properties_typeProperties_existingClusterId": {
+			"value": "1022-212132-ajtrgw50"
+		},
+		"ls_4_kv_kvdemo123_properties_typeProperties_baseUrl": {
+			"value": "https://kvdemo-123.vault.azure.net/"
+		},
+		"ls_akvm_properties_typeProperties_baseUrl": {
+			"value": "https://kvdemo-123.vault.azure.net/"
+		},
+		"ls_kv_demo_123_properties_typeProperties_baseUrl": {
+			"value": "https://kv-demo-123.vault.azure.net/"
+		},
+		"ls_kv_kv123_properties_typeProperties_baseUrl": {
+			"value": "https://kvdemo-123.vault.azure.net/"
+		},
+		"ls_kv_sql_properties_typeProperties_connectionString_secretName": {
+			"value": "SecretAzureSqlDatabase"
+		},
+		"ls_strg_accnt_sasUri": {
+			"value": ""
+		}
+	}
+}
