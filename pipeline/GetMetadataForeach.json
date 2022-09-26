@@ -1,0 +1,9 @@
+{
+	"name": "GetMetadataForeach",
+	"properties": {
+		"folder": {
+			"name": "Revision_RealtimeScenarios"
+		},
+		"annotations": []
+	}
+}
