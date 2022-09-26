@@ -101,7 +101,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"myDelimitedTextFilename": {
-											"value": "@item().childItems.name",
+											"value": "@item().name",
 											"type": "Expression"
 										}
 									}
