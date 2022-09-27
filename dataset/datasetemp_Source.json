@@ -5,15 +5,17 @@
 			"referenceName": "ls_strgaccount_myadfdemo",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"pdsFilename": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": {
-					"value": "@dataset().FileName",
-					"type": "Expression"
-				},
+				"fileName": "@dataset().pdsFilename",
 				"folderPath": "source",
 				"container": "data"
 			},
