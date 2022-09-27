@@ -28,10 +28,6 @@
 					"name": "SnkEmployee"
 				},
 				{
-					"dataset": {
-						"referenceName": "DsCity",
-						"type": "DatasetReference"
-					},
 					"name": "SnkCity"
 				},
 				{
@@ -120,19 +116,45 @@
 				"SelectDepartment sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> SnkDepartment",
+				"     skipDuplicateMapOutputs: true,",
+				"     mapColumn(",
+				"          DEPTNO,",
+				"          DEPTNAME",
+				"     )) ~> SnkDepartment",
 				"SelectEmployee sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> SnkEmployee",
-				"SelectCity sink(allowSchemaDrift: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     mapColumn(",
+				"          TBLENAME,",
+				"          ENAME,",
+				"          DEPTNO,",
+				"          JOB,",
+				"          EMPNO,",
+				"          HIREDATE,",
+				"          LOCNO,",
+				"          SALGRADE",
+				"     )) ~> SnkEmployee",
+				"SelectCity sink(allowSchemaDrift: false,",
 				"     validateSchema: false,",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> SnkCity",
+				"     skipDuplicateMapOutputs: true,",
+				"     saveOrder: 1,",
+				"     mapColumn(",
+				"          LOCNO,",
+				"          LOCATION",
+				"     ),",
+				"     partitionBy('hash', 1)) ~> SnkCity",
 				"SelectSalary sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> sinkSalary"
+				"     skipDuplicateMapOutputs: true,",
+				"     mapColumn(",
+				"          SALGRADE,",
+				"          MINSALARY,",
+				"          MAXSALARY",
+				"     ),",
+				"     partitionBy('hash', 1)) ~> sinkSalary"
 			]
 		}
 	}
