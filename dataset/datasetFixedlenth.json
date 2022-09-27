@@ -1,5 +1,5 @@
 {
-	"name": "Fixedlenth",
+	"name": "datasetFixedlenth",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ls_strgaccount_myadfdemo",

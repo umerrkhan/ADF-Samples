@@ -6,7 +6,7 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "Fixedlenth",
+						"referenceName": "datasetFixedlenth",
 						"type": "DatasetReference"
 					},
 					"name": "source1"
