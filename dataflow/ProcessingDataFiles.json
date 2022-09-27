@@ -128,6 +128,7 @@
 				"     )) ~> SnkDepartment",
 				"SelectEmployee sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     partitionFileNames:['Employee.csv'],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
 				"     mapColumn(",
