@@ -84,11 +84,7 @@
 				"SALARY select(mapColumn(",
 				"          SALGRADE = Column_2,",
 				"          MINSALARY = Column_3,",
-				"          MAXSALARY = Column_4,",
-				"          Column_5,",
-				"          Column_6,",
-				"          Column_7,",
-				"          Column_8",
+				"          MAXSALARY = Column_4",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> select2"
