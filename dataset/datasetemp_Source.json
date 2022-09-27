@@ -2,7 +2,7 @@
 	"name": "datasetemp_Source",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ls_strg_accnt",
+			"referenceName": "ls_strgaccount_myadfdemo",
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
@@ -20,7 +20,8 @@
 					"value": "@dataset().FileName",
 					"type": "Expression"
 				},
-				"container": "sourcedata"
+				"folderPath": "source",
+				"container": "data"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
