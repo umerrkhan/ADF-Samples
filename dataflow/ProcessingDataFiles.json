@@ -33,10 +33,10 @@
 					"name": "SelectDepartment"
 				},
 				{
-					"name": "select1"
+					"name": "SelectCity"
 				},
 				{
-					"name": "select2"
+					"name": "SelectSalary"
 				}
 			],
 			"scriptLines": [
@@ -80,14 +80,14 @@
 				"          LOCATION = Column_3",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> select1",
+				"     skipDuplicateMapOutputs: true) ~> SelectCity",
 				"SALARY select(mapColumn(",
 				"          SALGRADE = Column_2,",
 				"          MINSALARY = Column_3,",
 				"          MAXSALARY = Column_4",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> select2"
+				"     skipDuplicateMapOutputs: true) ~> SelectSalary"
 			]
 		}
 	}
