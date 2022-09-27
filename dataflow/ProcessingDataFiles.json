@@ -9,16 +9,22 @@
 						"referenceName": "dsSourceFile",
 						"type": "DatasetReference"
 					},
-					"name": "source1"
+					"name": "source"
 				}
 			],
 			"sinks": [],
 			"transformations": [
 				{
-					"name": "filter1"
+					"name": "EMPLOYEE"
 				},
 				{
-					"name": "filter2"
+					"name": "DEPARTMENT"
+				},
+				{
+					"name": "SALARY"
+				},
+				{
+					"name": "CITY"
 				}
 			],
 			"scriptLines": [
@@ -34,9 +40,11 @@
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> source1",
-				"filter2 filter(Column_1 == 'EMPLOYEE') ~> filter1",
-				"source1 filter(Column_1 == 'DEPARTMENT') ~> filter2"
+				"     ignoreNoFilesFound: false) ~> source",
+				"source filter(Column_1 == 'EMPLOYEE') ~> EMPLOYEE",
+				"source filter(Column_1 == 'DEPARTMENT') ~> DEPARTMENT",
+				"source filter(Column_1 == 'SALARY') ~> SALARY",
+				"source filter(Column_1 == 'CITY') ~> CITY"
 			]
 		}
 	}
