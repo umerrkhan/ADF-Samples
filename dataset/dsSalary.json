@@ -1,0 +1,23 @@
+{
+	"name": "dsSalary",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_strgaccount_myadfdemo",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Salary",
+				"folderPath": "export",
+				"container": "data"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}

@@ -12,7 +12,36 @@
 					"name": "source"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "dsDeparment",
+						"type": "DatasetReference"
+					},
+					"name": "SnkDepartment"
+				},
+				{
+					"dataset": {
+						"referenceName": "Employee",
+						"type": "DatasetReference"
+					},
+					"name": "SnkEmployee"
+				},
+				{
+					"dataset": {
+						"referenceName": "DsCity",
+						"type": "DatasetReference"
+					},
+					"name": "SnkCity"
+				},
+				{
+					"dataset": {
+						"referenceName": "dsSalary",
+						"type": "DatasetReference"
+					},
+					"name": "sinkSalary"
+				}
+			],
 			"transformations": [
 				{
 					"name": "EMPLOYEE"
@@ -87,7 +116,23 @@
 				"          MAXSALARY = Column_4",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> SelectSalary"
+				"     skipDuplicateMapOutputs: true) ~> SelectSalary",
+				"SelectDepartment sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> SnkDepartment",
+				"SelectEmployee sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> SnkEmployee",
+				"SelectCity sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> SnkCity",
+				"SelectSalary sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sinkSalary"
 			]
 		}
 	}
