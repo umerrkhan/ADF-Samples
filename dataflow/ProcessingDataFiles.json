@@ -16,6 +16,9 @@
 			"transformations": [
 				{
 					"name": "filter1"
+				},
+				{
+					"name": "filter2"
 				}
 			],
 			"scriptLines": [
@@ -32,7 +35,8 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source1",
-				"source1 filter(column_1 == 'EMPLOYEE') ~> filter1"
+				"filter2 filter(Column_1 == 'EMPLOYEE') ~> filter1",
+				"source1 filter(Column_1 == 'DEPARTMENT') ~> filter2"
 			]
 		}
 	}
