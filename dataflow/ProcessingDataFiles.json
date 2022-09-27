@@ -25,6 +25,12 @@
 				},
 				{
 					"name": "CITY"
+				},
+				{
+					"name": "SelectEmployee"
+				},
+				{
+					"name": "SelectDepartment"
 				}
 			],
 			"scriptLines": [
@@ -44,7 +50,31 @@
 				"source filter(Column_1 == 'EMPLOYEE') ~> EMPLOYEE",
 				"source filter(Column_1 == 'DEPARTMENT') ~> DEPARTMENT",
 				"source filter(Column_1 == 'SALARY') ~> SALARY",
-				"source filter(Column_1 == 'CITY') ~> CITY"
+				"source filter(Column_1 == 'CITY') ~> CITY",
+				"EMPLOYEE select(mapColumn(",
+				"          TBLENAME = Column_1,",
+				"          ENAME = Column_2,",
+				"          DEPTNO = Column_3,",
+				"          JOB = Column_4,",
+				"          EMPNO = Column_5,",
+				"          HIREDATE = Column_6,",
+				"          LOCNO = Column_7,",
+				"          SALGRADE = Column_8",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> SelectEmployee",
+				"DEPARTMENT select(mapColumn(",
+				"          TBLENAME = Column_1,",
+				"          DEPTNO = Column_2,",
+				"          DEPTNAME = Column_3,",
+				"          Column_4,",
+				"          Column_5,",
+				"          Column_6,",
+				"          Column_7,",
+				"          Column_8",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> SelectDepartment"
 			]
 		}
 	}
