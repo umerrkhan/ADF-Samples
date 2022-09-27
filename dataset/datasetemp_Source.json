@@ -15,7 +15,6 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "@dataset().pdsFilename",
 				"folderPath": "source",
 				"container": "data"
 			},
