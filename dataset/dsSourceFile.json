@@ -1,0 +1,27 @@
+{
+	"name": "dsSourceFile",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_strgaccount_myadfdemo",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "data_1.DAT",
+				"folderPath": "source",
+				"container": "data"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"type": "String"
+			}
+		]
+	}
+}
