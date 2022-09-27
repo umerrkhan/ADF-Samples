@@ -1,0 +1,9 @@
+{
+	"name": "mypdemoadf",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "c7622ce5-7081-43d8-8b06-73227aa46307",
+		"tenantId": "3617ef9b-98b4-40d9-ba43-e1ed6709cf0d"
+	}
+}
