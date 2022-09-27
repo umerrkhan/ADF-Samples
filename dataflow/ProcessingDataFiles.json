@@ -119,6 +119,7 @@
 				"     skipDuplicateMapOutputs: true) ~> SelectSalary",
 				"SelectDepartment sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     partitionFileNames:['Department.csv'],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
 				"     mapColumn(",
