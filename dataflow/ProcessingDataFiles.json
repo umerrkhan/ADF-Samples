@@ -31,6 +31,9 @@
 				},
 				{
 					"name": "SelectDepartment"
+				},
+				{
+					"name": "select1"
 				}
 			],
 			"scriptLines": [
@@ -68,7 +71,13 @@
 				"          DEPTNAME = Column_3",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> SelectDepartment"
+				"     skipDuplicateMapOutputs: true) ~> SelectDepartment",
+				"CITY select(mapColumn(",
+				"          LOCNO = Column_2,",
+				"          LOCATION = Column_3",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> select1"
 			]
 		}
 	}
