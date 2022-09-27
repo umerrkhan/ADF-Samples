@@ -32,7 +32,7 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source1",
-				"source1 filter(Column_1 == 'EMPLOYEE') ~> filter1"
+				"source1 filter(column_1 == 'EMPLOYEE') ~> filter1"
 			]
 		}
 	}
