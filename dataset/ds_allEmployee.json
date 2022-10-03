@@ -21,15 +21,19 @@
 		},
 		"schema": [
 			{
+				"name": "id",
 				"type": "String"
 			},
 			{
+				"name": "Empname",
 				"type": "String"
 			},
 			{
+				"name": "gender",
 				"type": "String"
 			},
 			{
+				"name": "Department",
 				"type": "String"
 			}
 		]
