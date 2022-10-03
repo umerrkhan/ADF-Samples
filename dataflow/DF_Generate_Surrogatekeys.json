@@ -19,7 +19,15 @@
 					"name": "allEmployeewithData"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "ds_allEmployee",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
 			"transformations": [
 				{
 					"name": "GenerateSurrogateKey"
@@ -82,7 +90,19 @@
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> select",
-				"select, allEmployeewithData union(byName: true)~> union1"
+				"select, allEmployeewithData union(byName: true)~> union1",
+				"union1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          id as string,",
+				"          Empname as string,",
+				"          gender as string,",
+				"          Department as string",
+				"     ),",
+				"     partitionFileNames:['employee.csv'],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> sink1"
 			]
 		}
 	}
