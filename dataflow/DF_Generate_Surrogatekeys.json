@@ -22,22 +22,25 @@
 			"sinks": [],
 			"transformations": [
 				{
-					"name": "surrogateKey1"
+					"name": "GenerateSurrogateKey"
 				},
 				{
-					"name": "derivedColumn1"
+					"name": "DummyColumn4Groupby"
 				},
 				{
-					"name": "aggregate1"
+					"name": "GetMaxValueSurrogateKey"
 				},
 				{
-					"name": "join2"
+					"name": "JoinMaxValuewithSurrogateKey"
 				},
 				{
-					"name": "derivedColumn2"
+					"name": "DeriveSurrogatekey"
 				},
 				{
-					"name": "select1"
+					"name": "select"
+				},
+				{
+					"name": "union1"
 				}
 			],
 			"scriptLines": [
@@ -60,25 +63,26 @@
 				"     ignoreNoFilesFound: false) ~> allEmployeewithData",
 				"sourceEmployee keyGenerate(output(id as long),",
 				"     startAt: 1L,",
-				"     stepValue: 1L) ~> surrogateKey1",
-				"allEmployeewithData derive(Dummy = \"Dummy\") ~> derivedColumn1",
-				"derivedColumn1 aggregate(groupBy(Dummy),",
-				"     Max_id = max(id)) ~> aggregate1",
-				"surrogateKey1, aggregate1 join(1 == 1,",
+				"     stepValue: 1L) ~> GenerateSurrogateKey",
+				"allEmployeewithData derive(Dummy = \"Dummy\") ~> DummyColumn4Groupby",
+				"DummyColumn4Groupby aggregate(groupBy(Dummy),",
+				"     Max_id = max(id)) ~> GetMaxValueSurrogateKey",
+				"GenerateSurrogateKey, GetMaxValueSurrogateKey join(1 == 1,",
 				"     joinType:'cross',",
 				"     matchType:'exact',",
 				"     ignoreSpaces: false,",
-				"     broadcast: 'auto')~> join2",
-				"join2 derive(New_id = toString(toInteger(Max_id) + toInteger(id))\r",
-				") ~> derivedColumn2",
-				"derivedColumn2 select(mapColumn(",
+				"     broadcast: 'auto')~> JoinMaxValuewithSurrogateKey",
+				"JoinMaxValuewithSurrogateKey derive(New_id = toString(toInteger(Max_id) + toInteger(id))\r",
+				") ~> DeriveSurrogatekey",
+				"DeriveSurrogatekey select(mapColumn(",
 				"          id = New_id,",
 				"          Empname,",
 				"          gender,",
 				"          Department",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> select1"
+				"     skipDuplicateMapOutputs: true) ~> select",
+				"select, allEmployeewithData union(byName: true)~> union1"
 			]
 		}
 	}
