@@ -1,0 +1,10 @@
+{
+	"name": "SurrogateKeys",
+	"properties": {
+		"description": "Generating Surrogate Keys",
+		"folder": {
+			"name": "Revision_RealtimeScenarios"
+		},
+		"annotations": []
+	}
+}
