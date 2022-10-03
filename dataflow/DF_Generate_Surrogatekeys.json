@@ -31,7 +31,13 @@
 					"name": "aggregate1"
 				},
 				{
-					"name": "join1"
+					"name": "join2"
+				},
+				{
+					"name": "derivedColumn2"
+				},
+				{
+					"name": "select1"
 				}
 			],
 			"scriptLines": [
@@ -58,11 +64,21 @@
 				"allEmployeewithData derive(Dummy = \"Dummy\") ~> derivedColumn1",
 				"derivedColumn1 aggregate(groupBy(Dummy),",
 				"     Max_id = max(id)) ~> aggregate1",
-				"aggregate1 join(ERROR_FUNCTION('') == ERROR_FUNCTION(''),",
-				"     joinType:'inner',",
+				"surrogateKey1, aggregate1 join(1 == 1,",
+				"     joinType:'cross',",
 				"     matchType:'exact',",
 				"     ignoreSpaces: false,",
-				"     broadcast: 'auto')~> join1"
+				"     broadcast: 'auto')~> join2",
+				"join2 derive(New_id = toString(toInteger(Max_id) + toInteger(id))\r",
+				") ~> derivedColumn2",
+				"derivedColumn2 select(mapColumn(",
+				"          id = New_id,",
+				"          Empname,",
+				"          gender,",
+				"          Department",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> select1"
 			]
 		}
 	}
