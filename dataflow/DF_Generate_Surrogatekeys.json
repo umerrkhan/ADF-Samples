@@ -99,7 +99,7 @@
 				"          gender as string,",
 				"          Department as string",
 				"     ),",
-				"     partitionFileNames:['employee.csv'],",
+				"     partitionFileNames:['all_employee.csv'],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
 				"     partitionBy('hash', 1)) ~> sink1"
