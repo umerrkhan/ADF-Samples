@@ -1,0 +1,48 @@
+{
+	"name": "dsFileLocationDS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "mylinkedservice",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"directoryName": {
+				"type": "string",
+				"defaultValue": "landing_dir"
+			},
+			"containerName": {
+				"type": "string",
+				"defaultValue": "containerwtc"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": {
+					"value": "@dataset().directoryName",
+					"type": "Expression"
+				},
+				"container": {
+					"value": "@dataset().containerName",
+					"type": "Expression"
+				}
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			}
+		]
+	}
+}
