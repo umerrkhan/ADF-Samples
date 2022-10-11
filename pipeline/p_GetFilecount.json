@@ -69,7 +69,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"expression": {
-						"value": "@equals(variables('Filescount'),2)",
+						"value": "@equals(int(variables('Filescount')),2)",
 						"type": "Expression"
 					},
 					"ifFalseActivities": [
