@@ -45,11 +45,7 @@
 						]
 					}
 				],
-				"userProperties": [
-					{
-						"name": "Filescount"
-					}
-				],
+				"userProperties": [],
 				"typeProperties": {
 					"variableName": "Filescount",
 					"value": {
