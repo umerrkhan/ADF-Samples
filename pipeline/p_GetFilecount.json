@@ -36,7 +36,7 @@
 				}
 			},
 			{
-				"name": "Set variable1",
+				"name": "Total files in source directory",
 				"type": "SetVariable",
 				"dependsOn": [
 					{
@@ -53,6 +53,47 @@
 						"value": "@string(length(activity('Get List of Files').output.childItems))",
 						"type": "Expression"
 					}
+				}
+			},
+			{
+				"name": "If Condition1",
+				"type": "IfCondition",
+				"dependsOn": [
+					{
+						"activity": "Total files in source directory",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"expression": {
+						"value": "@equals(variables('Filescount'),2)",
+						"type": "Expression"
+					},
+					"ifFalseActivities": [
+						{
+							"name": "False wait 10 Secs",
+							"type": "Wait",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"waitTimeInSeconds": 1
+							}
+						}
+					],
+					"ifTrueActivities": [
+						{
+							"name": "true wait 5 secs",
+							"type": "Wait",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"waitTimeInSeconds": 5
+							}
+						}
+					]
 				}
 			}
 		],
