@@ -13,7 +13,6 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
 						"referenceName": "dsFileLocationDS",
@@ -34,8 +33,37 @@
 						"type": "DelimitedTextReadSettings"
 					}
 				}
+			},
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "Get List of Files",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [
+					{
+						"name": "Filescount"
+					}
+				],
+				"typeProperties": {
+					"variableName": "Filescount",
+					"value": {
+						"value": "@string(length(activity('Get List of Files').output.childItems))",
+						"type": "Expression"
+					}
+				}
 			}
 		],
+		"variables": {
+			"Filescount": {
+				"type": "String"
+			}
+		},
 		"annotations": []
 	}
 }
