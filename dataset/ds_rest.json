@@ -5,27 +5,8 @@
 			"referenceName": "ls_RestAPI_NHSDIGITAL",
 			"type": "LinkedServiceReference"
 		},
-		"parameters": {
-			"Offset": {
-				"type": "string",
-				"defaultValue": "0"
-			},
-			"Limit": {
-				"type": "string",
-				"defaultValue": "1000"
-			},
-			"OrgOdsCode": {
-				"type": "string"
-			}
-		},
 		"annotations": [],
 		"type": "RestResource",
-		"typeProperties": {
-			"relativeUrl": {
-				"value": "@concat('organisations?RelTypeId=RE3,RE4,RE5&TargetOrgId=',encodeUriComponent(dataset().OrgOdsCode),'&RelStatus=active&Limit=',dataset().Limit,if(equals(dataset().Offset,'0'),'',concat('&Offset=',dataset().Offset)))",
-				"type": "Expression"
-			}
-		},
 		"schema": []
 	}
 }
