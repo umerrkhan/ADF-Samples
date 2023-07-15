@@ -21,14 +21,17 @@
 							{
 								"name": "CurrentOrgId",
 								"value": {
-									"value": "X26",
+									"value": "D83046",
 									"type": "Expression"
 								}
 							}
 						],
 						"httpRequestTimeout": "00:01:40",
-						"requestInterval": "00.00:00:00.010",
-						"requestMethod": "GET"
+						"requestInterval": "00.00:00:00.001",
+						"requestMethod": "GET",
+						"paginationRules": {
+							"QueryParameters.Offset": "RANGE:0:25000:1000"
+						}
 					},
 					"sink": {
 						"type": "DelimitedTextSink",
@@ -47,109 +50,87 @@
 						"mappings": [
 							{
 								"source": {
-									"path": "$['Organisation']['Name']"
+									"path": "$['Organisations'][0]['name']"
 								},
 								"sink": {
-									"ordinal": 1
+									"name": "Name"
 								}
 							},
 							{
 								"source": {
-									"path": "$['Organisation']['OrgId']['root']"
+									"path": "$['Organisations'][0]['OrgId']"
 								},
 								"sink": {
-									"ordinal": 2
+									"name": "OrgId"
 								}
 							},
 							{
 								"source": {
-									"path": "$['Organisation']['OrgId']['assigningAuthorityName']"
+									"path": "$['Organisations'][0]['Status']"
 								},
 								"sink": {
-									"ordinal": 3
+									"name": "Status"
 								}
 							},
 							{
 								"source": {
-									"path": "$['Organisation']['OrgId']['extension']"
+									"path": "$['Organisations'][0]['OrgRecordClass']"
 								},
 								"sink": {
-									"ordinal": 4
+									"name": "OrgRecordClass"
 								}
 							},
 							{
 								"source": {
-									"path": "$['Organisation']['Status']"
+									"path": "$['Organisations'][0]['PostCode']"
 								},
 								"sink": {
-									"ordinal": 5
+									"name": "PostCode"
 								}
 							},
 							{
 								"source": {
-									"path": "$['Organisation']['LastChangeDate']"
+									"path": "$['Organisations'][0]['LastChangeDate']"
 								},
 								"sink": {
-									"ordinal": 6
+									"name": "LastChangeDate"
 								}
 							},
 							{
 								"source": {
-									"path": "$['Organisation']['orgRecordClass']"
+									"path": "$['Organisations'][0]['PrimaryRoleId']"
 								},
 								"sink": {
-									"ordinal": 7
+									"name": "PrimaryRoleId"
 								}
 							},
 							{
 								"source": {
-									"path": "$['Organisation']['GeoLoc']['Location']['AddrLn1']"
+									"path": "$['Organisations'][0]['PrimaryRoleDescription']"
 								},
 								"sink": {
-									"ordinal": 8
+									"name": "PrimaryRoleDescription"
 								}
 							},
 							{
 								"source": {
-									"path": "$['Organisation']['GeoLoc']['Location']['AddrLn2']"
+									"path": "$['Organisations'][0]['OrgLink']"
 								},
 								"sink": {
-									"ordinal": 9
+									"name": "OrgLink"
 								}
 							},
 							{
 								"source": {
-									"path": "$['Organisation']['GeoLoc']['Location']['Town']"
+									"path": "$['CurrentOrgId']"
 								},
 								"sink": {
-									"ordinal": 10
-								}
-							},
-							{
-								"source": {
-									"path": "$['Organisation']['GeoLoc']['Location']['PostCode']"
-								},
-								"sink": {
-									"ordinal": 11
-								}
-							},
-							{
-								"source": {
-									"path": "$['Organisation']['GeoLoc']['Location']['Country']"
-								},
-								"sink": {
-									"ordinal": 12
-								}
-							},
-							{
-								"source": {
-									"path": "$['Organisation']['GeoLoc']['Location']['UPRN']"
-								},
-								"sink": {
-									"ordinal": 13
+									"name": "CurrentOrgId"
 								}
 							}
-						]
+						],
+						"collectionReference": "",
+						"mapComplexValuesToString": false
 					}
 				},
 				"inputs": [
@@ -165,11 +146,8 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_Save_Json_output",
-						"type": "DatasetReference",
-						"parameters": {
-							"pTargetfilename": "file.txt"
-						}
+						"referenceName": "DS_ICB",
+						"type": "DatasetReference"
 					}
 				]
 			}
