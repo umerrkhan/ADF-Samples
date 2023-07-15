@@ -430,7 +430,8 @@
 									"name": "Organisation_Succs_Succ'][0]['Target_PrimaryRoleId_uniqueRoleId"
 								}
 							}
-						]
+						],
+						"collectionReference": "$[Organisation]"
 					}
 				},
 				"inputs": [
