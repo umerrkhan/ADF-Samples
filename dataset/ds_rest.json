@@ -1,0 +1,17 @@
+{
+	"name": "ds_rest",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_RestAPI_NHSDIGITAL",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"paramds_query": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"schema": []
+	}
+}
