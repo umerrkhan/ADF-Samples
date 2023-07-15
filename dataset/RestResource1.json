@@ -6,14 +6,17 @@
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"RelativeURL": {
+			"paramRelativeURL": {
 				"type": "string"
 			}
 		},
 		"annotations": [],
 		"type": "RestResource",
 		"typeProperties": {
-			"relativeUrl": "?page=2"
+			"relativeUrl": {
+				"value": "@dataset().paramRelativeURL",
+				"type": "Expression"
+			}
 		},
 		"schema": []
 	}
