@@ -187,7 +187,7 @@
 						"mappings": [
 							{
 								"source": {
-									"path": "$['Organisation']['Name']"
+									"path": "['Name']"
 								},
 								"sink": {
 									"name": "Name"
@@ -195,15 +195,15 @@
 							},
 							{
 								"source": {
-									"path": "$['Organisation']['OrgId']['extension']"
+									"path": "['OrgId']"
 								},
 								"sink": {
-									"name": "extension"
+									"name": "OrgId"
 								}
 							},
 							{
 								"source": {
-									"path": "$['Organisation']['Status']"
+									"path": "['Status']"
 								},
 								"sink": {
 									"name": "Status"
@@ -211,23 +211,15 @@
 							},
 							{
 								"source": {
-									"path": "$['Organisation']['orgRecordClass']"
+									"path": "['PrimaryRoleDescription']"
 								},
 								"sink": {
-									"name": "orgRecordClass"
-								}
-							},
-							{
-								"source": {
-									"path": "$['Organisation']['Roles']['Role'][0]['primaryRole']"
-								},
-								"sink": {
-									"name": "primaryRole"
+									"name": "PrimaryRoleDescription"
 								}
 							}
 						],
-						"collectionReference": "$[Organisations]",
-						"mapComplexValuesToString": true
+						"collectionReference": "$['Organisations']",
+						"mapComplexValuesToString": false
 					}
 				},
 				"inputs": [
