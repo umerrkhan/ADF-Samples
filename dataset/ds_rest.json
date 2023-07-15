@@ -6,7 +6,15 @@
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"paramds_query": {
+			"Offset": {
+				"type": "string",
+				"defaultValue": "0"
+			},
+			"Limit": {
+				"type": "string",
+				"defaultValue": "1000"
+			},
+			"OrgOdsCode": {
 				"type": "string"
 			}
 		},
