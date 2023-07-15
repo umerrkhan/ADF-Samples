@@ -10,7 +10,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "file.csv",
+				"fileName": {
+					"value": "@concat('Test_', formatDateTime(utcnow(), 'yyyy-dd-MM'))\r\n",
+					"type": "Expression"
+				},
 				"folderPath": "Target_dir",
 				"container": "samplesfiles"
 			},
