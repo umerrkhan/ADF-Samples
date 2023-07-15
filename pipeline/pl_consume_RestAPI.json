@@ -50,6 +50,14 @@
 						"mappings": [
 							{
 								"source": {
+									"path": "['OrgLink']"
+								},
+								"sink": {
+									"name": "OrgLink"
+								}
+							},
+							{
+								"source": {
 									"path": "['name']"
 								},
 								"sink": {
