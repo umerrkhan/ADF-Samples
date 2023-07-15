@@ -112,18 +112,10 @@
 							},
 							{
 								"source": {
-									"path": "$['Organisation']['Date'][0]['Type']"
+									"path": "$['Organisation']['Organisation..extension']"
 								},
 								"sink": {
-									"name": "Organisation_Date'][0]['Type"
-								}
-							},
-							{
-								"source": {
-									"path": "$['Organisation']['Date'][0]['Start']"
-								},
-								"sink": {
-									"name": "Organisation_Date'][0]['Start"
+									"name": "OrgId"
 								}
 							},
 							{
@@ -220,6 +212,22 @@
 								},
 								"sink": {
 									"name": "UPRN"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['Date'][0]['Type']"
+								},
+								"sink": {
+									"name": "Organisation_Date'][0]['Type"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['Date'][0]['Start']"
+								},
+								"sink": {
+									"name": "Organisation_Date'][0]['Start"
 								}
 							},
 							{
