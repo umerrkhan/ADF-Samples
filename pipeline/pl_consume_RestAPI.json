@@ -1,0 +1,171 @@
+{
+	"name": "pl_consume_RestAPI",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "RestSource",
+						"httpRequestTimeout": "00:01:40",
+						"requestInterval": "00.00:00:00.010",
+						"requestMethod": "GET",
+						"paginationRules": {
+							"supportRFC5988": "true"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['Organisation']['Name']"
+								},
+								"sink": {
+									"ordinal": 1
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['OrgId']['root']"
+								},
+								"sink": {
+									"ordinal": 2
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['OrgId']['assigningAuthorityName']"
+								},
+								"sink": {
+									"ordinal": 3
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['OrgId']['extension']"
+								},
+								"sink": {
+									"ordinal": 4
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['Status']"
+								},
+								"sink": {
+									"ordinal": 5
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['LastChangeDate']"
+								},
+								"sink": {
+									"ordinal": 6
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['orgRecordClass']"
+								},
+								"sink": {
+									"ordinal": 7
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['GeoLoc']['Location']['AddrLn1']"
+								},
+								"sink": {
+									"ordinal": 8
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['GeoLoc']['Location']['AddrLn2']"
+								},
+								"sink": {
+									"ordinal": 9
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['GeoLoc']['Location']['Town']"
+								},
+								"sink": {
+									"ordinal": 10
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['GeoLoc']['Location']['PostCode']"
+								},
+								"sink": {
+									"ordinal": 11
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['GeoLoc']['Location']['Country']"
+								},
+								"sink": {
+									"ordinal": 12
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['GeoLoc']['Location']['UPRN']"
+								},
+								"sink": {
+									"ordinal": 13
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ds_rest",
+						"type": "DatasetReference",
+						"parameters": {
+							"paramds_query": {
+								"value": "@concat('X','2','6')",
+								"type": "Expression"
+							}
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_Save_Json_output",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
