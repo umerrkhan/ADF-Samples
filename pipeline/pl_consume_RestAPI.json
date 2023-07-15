@@ -151,10 +151,9 @@
 						"referenceName": "ds_rest",
 						"type": "DatasetReference",
 						"parameters": {
-							"paramds_query": {
-								"value": "@concat('X','2','6')",
-								"type": "Expression"
-							}
+							"Offset": "0",
+							"Limit": "1000",
+							"OrgOdsCode": "D83046"
 						}
 					}
 				],
