@@ -161,7 +161,10 @@
 				"outputs": [
 					{
 						"referenceName": "DS_Save_Json_output",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"pTargetfilename": "file.txt"
+						}
 					}
 				]
 			}
