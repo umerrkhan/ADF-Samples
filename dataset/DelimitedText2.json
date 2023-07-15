@@ -21,55 +21,23 @@
 		},
 		"schema": [
 			{
-				"name": "NHS ENGLAND - X26",
+				"name": "id",
 				"type": "String"
 			},
 			{
-				"name": "2.16.840.1.113883.2.1.3.2.4.18.48",
+				"name": "email",
 				"type": "String"
 			},
 			{
-				"name": "HSCIC",
+				"name": "first_name",
 				"type": "String"
 			},
 			{
-				"name": "X26",
+				"name": "last_name",
 				"type": "String"
 			},
 			{
-				"name": "Active",
-				"type": "String"
-			},
-			{
-				"name": "2023-01-31",
-				"type": "String"
-			},
-			{
-				"name": "RC1",
-				"type": "String"
-			},
-			{
-				"name": "THE LEEDS GOVERNMENT HUB",
-				"type": "String"
-			},
-			{
-				"name": "7-8 WELLINGTON PLACE",
-				"type": "String"
-			},
-			{
-				"name": "LEEDS",
-				"type": "String"
-			},
-			{
-				"name": "LS1 4AP",
-				"type": "String"
-			},
-			{
-				"name": "ENGLAND",
-				"type": "String"
-			},
-			{
-				"name": "72766088",
+				"name": "avatar",
 				"type": "String"
 			}
 		]
