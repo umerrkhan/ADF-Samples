@@ -1,0 +1,77 @@
+{
+	"name": "DelimitedText2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "file.txt",
+				"folderPath": "Target_dir",
+				"container": "samplesfiles"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "NHS ENGLAND - X26",
+				"type": "String"
+			},
+			{
+				"name": "2.16.840.1.113883.2.1.3.2.4.18.48",
+				"type": "String"
+			},
+			{
+				"name": "HSCIC",
+				"type": "String"
+			},
+			{
+				"name": "X26",
+				"type": "String"
+			},
+			{
+				"name": "Active",
+				"type": "String"
+			},
+			{
+				"name": "2023-01-31",
+				"type": "String"
+			},
+			{
+				"name": "RC1",
+				"type": "String"
+			},
+			{
+				"name": "THE LEEDS GOVERNMENT HUB",
+				"type": "String"
+			},
+			{
+				"name": "7-8 WELLINGTON PLACE",
+				"type": "String"
+			},
+			{
+				"name": "LEEDS",
+				"type": "String"
+			},
+			{
+				"name": "LS1 4AP",
+				"type": "String"
+			},
+			{
+				"name": "ENGLAND",
+				"type": "String"
+			},
+			{
+				"name": "72766088",
+				"type": "String"
+			}
+		]
+	}
+}
