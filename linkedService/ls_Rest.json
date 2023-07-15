@@ -1,0 +1,13 @@
+{
+	"name": "ls_Rest",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "RestService",
+		"typeProperties": {
+			"url": "https://directory.spineservices.nhs.uk/ORD/2-0-0/organisations?",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}

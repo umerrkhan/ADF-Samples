@@ -1,0 +1,9 @@
+{
+	"name": "dfwtc01",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "c32f1cc5-70d8-471b-873f-c3e905a4cdc3",
+		"tenantId": "ce6e45c5-2d08-45c3-81f6-91005a2cef34"
+	}
+}

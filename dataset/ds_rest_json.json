@@ -1,0 +1,33 @@
+{
+	"name": "ds_rest_json",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_Rest",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"Offset": {
+				"type": "string",
+				"defaultValue": "0"
+			},
+			"Limit": {
+				"type": "string",
+				"defaultValue": "1000"
+			},
+			"OrgOdsCode": {
+				"type": "string",
+				"defaultValue": "D83046"
+			}
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"typeProperties": {
+			"relativeUrl": {
+				"value": "@concat('organisations?RelTypeId=RE3,RE4,RE5&TargetOrgId=',encodeUriComponent(dataset().OrgOdsCode),'&RelStatus=active&Limit=',dataset().Limit,if(equals(dataset().Offset,'0'),'',concat('&Offset=',dataset().Offset)))",
+				"type": "Expression"
+			}
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
