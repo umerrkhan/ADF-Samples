@@ -22,7 +22,7 @@
 		"type": "RestResource",
 		"typeProperties": {
 			"relativeUrl": {
-				"value": "@dataset().paramds_query",
+				"value": "@concat('organisations?RelTypeId=RE3,RE4,RE5&TargetOrgId=',encodeUriComponent(dataset().OrgOdsCode),'&RelStatus=active&Limit=',dataset().Limit,if(equals(dataset().Offset,'0'),'',concat('&Offset=',dataset().Offset)))",
 				"type": "Expression"
 			}
 		},
