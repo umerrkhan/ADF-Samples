@@ -1,0 +1,65 @@
+{
+	"name": "DS_ICB",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "icb_relationships_00L_Sample.csv",
+				"folderPath": "Target_dir",
+				"container": "samplesfiles"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Name",
+				"type": "String"
+			},
+			{
+				"name": "OrgId",
+				"type": "String"
+			},
+			{
+				"name": "Status",
+				"type": "String"
+			},
+			{
+				"name": "OrgRecordClass",
+				"type": "String"
+			},
+			{
+				"name": "PostCode",
+				"type": "String"
+			},
+			{
+				"name": "LastChangeDate",
+				"type": "String"
+			},
+			{
+				"name": "PrimaryRoleId",
+				"type": "String"
+			},
+			{
+				"name": "PrimaryRoleDescription",
+				"type": "String"
+			},
+			{
+				"name": "OrgLink",
+				"type": "String"
+			},
+			{
+				"name": "CurrentOrgId",
+				"type": "String"
+			}
+		]
+	}
+}
