@@ -98,7 +98,332 @@
 							"fileExtension": ".txt"
 						}
 					},
-					"enableStaging": false
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['Organisation']['Name']"
+								},
+								"sink": {
+									"name": "Name"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['Date'][0]['Type']"
+								},
+								"sink": {
+									"name": "Organisation_Date'][0]['Type"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['Date'][0]['Start']"
+								},
+								"sink": {
+									"name": "Organisation_Date'][0]['Start"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['OrgId']['root']"
+								},
+								"sink": {
+									"name": "Organisation_OrgId_root"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['OrgId']['assigningAuthorityName']"
+								},
+								"sink": {
+									"name": "Organisation_OrgId_assigningAuthorityName"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['OrgId']['extension']"
+								},
+								"sink": {
+									"name": "Organisation_OrgId_extension"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['Status']"
+								},
+								"sink": {
+									"name": "Organisation_Status"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['LastChangeDate']"
+								},
+								"sink": {
+									"name": "LastChangeDate"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['orgRecordClass']"
+								},
+								"sink": {
+									"name": "orgRecordClass"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['GeoLoc']['Location']['AddrLn1']"
+								},
+								"sink": {
+									"name": "AddrLn1"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['GeoLoc']['Location']['AddrLn2']"
+								},
+								"sink": {
+									"name": "AddrLn2"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['GeoLoc']['Location']['Town']"
+								},
+								"sink": {
+									"name": "Town"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['GeoLoc']['Location']['PostCode']"
+								},
+								"sink": {
+									"name": "PostCode"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['GeoLoc']['Location']['Country']"
+								},
+								"sink": {
+									"name": "Country"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['GeoLoc']['Location']['UPRN']"
+								},
+								"sink": {
+									"name": "UPRN"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['Roles']['Role'][0]['id']"
+								},
+								"sink": {
+									"name": "Organisation_Roles_Role'][0]['id"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['Roles']['Role'][0]['uniqueRoleId']"
+								},
+								"sink": {
+									"name": "Organisation_Roles_Role'][0]['uniqueRoleId"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['Roles']['Role'][0]['primaryRole']"
+								},
+								"sink": {
+									"name": "primaryRole"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['Roles']['Role'][0]['Date'][0]['Type']"
+								},
+								"sink": {
+									"name": "Organisation_Roles_Role'][0]['Date'][0]['Type"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['Roles']['Role'][0]['Date'][0]['Start']"
+								},
+								"sink": {
+									"name": "Organisation_Roles_Role'][0]['Date'][0]['Start"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['Roles']['Role'][0]['Status']"
+								},
+								"sink": {
+									"name": "Organisation_Roles_Role'][0]['Status"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['Rels']['Rel'][0]['Date'][0]['Type']"
+								},
+								"sink": {
+									"name": "Organisation_Rels_Rel'][0]['Date'][0]['Type"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['Rels']['Rel'][0]['Date'][0]['Start']"
+								},
+								"sink": {
+									"name": "Organisation_Rels_Rel'][0]['Date'][0]['Start"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['Rels']['Rel'][0]['Status']"
+								},
+								"sink": {
+									"name": "Organisation_Rels_Rel'][0]['Status"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['Rels']['Rel'][0]['Target']['OrgId']['root']"
+								},
+								"sink": {
+									"name": "Organisation_Rels_Rel'][0]['Target_OrgId_root"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['Rels']['Rel'][0]['Target']['OrgId']['assigningAuthorityName']"
+								},
+								"sink": {
+									"name": "Organisation_Rels_Rel'][0]['Target_OrgId_assigningAuthorityName"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['Rels']['Rel'][0]['Target']['OrgId']['extension']"
+								},
+								"sink": {
+									"name": "Organisation_Rels_Rel'][0]['Target_OrgId_extension"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['Rels']['Rel'][0]['Target']['PrimaryRoleId']['id']"
+								},
+								"sink": {
+									"name": "Organisation_Rels_Rel'][0]['Target_PrimaryRoleId_id"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['Rels']['Rel'][0]['Target']['PrimaryRoleId']['uniqueRoleId']"
+								},
+								"sink": {
+									"name": "Organisation_Rels_Rel'][0]['Target_PrimaryRoleId_uniqueRoleId"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['Rels']['Rel'][0]['id']"
+								},
+								"sink": {
+									"name": "Organisation_Rels_Rel'][0]['id"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['Rels']['Rel'][0]['uniqueRelId']"
+								},
+								"sink": {
+									"name": "uniqueRelId"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['Succs']['Succ'][0]['uniqueSuccId']"
+								},
+								"sink": {
+									"name": "uniqueSuccId"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['Succs']['Succ'][0]['Date'][0]['Type']"
+								},
+								"sink": {
+									"name": "Organisation_Succs_Succ'][0]['Date'][0]['Type"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['Succs']['Succ'][0]['Date'][0]['Start']"
+								},
+								"sink": {
+									"name": "Organisation_Succs_Succ'][0]['Date'][0]['Start"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['Succs']['Succ'][0]['Type']"
+								},
+								"sink": {
+									"name": "Organisation_Succs_Succ'][0]['Type"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['Succs']['Succ'][0]['Target']['OrgId']['root']"
+								},
+								"sink": {
+									"name": "Organisation_Succs_Succ'][0]['Target_OrgId_root"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['Succs']['Succ'][0]['Target']['OrgId']['assigningAuthorityName']"
+								},
+								"sink": {
+									"name": "Organisation_Succs_Succ'][0]['Target_OrgId_assigningAuthorityName"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['Succs']['Succ'][0]['Target']['OrgId']['extension']"
+								},
+								"sink": {
+									"name": "Organisation_Succs_Succ'][0]['Target_OrgId_extension"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['Succs']['Succ'][0]['Target']['PrimaryRoleId']['id']"
+								},
+								"sink": {
+									"name": "Organisation_Succs_Succ'][0]['Target_PrimaryRoleId_id"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Organisation']['Succs']['Succ'][0]['Target']['PrimaryRoleId']['uniqueRoleId']"
+								},
+								"sink": {
+									"name": "Organisation_Succs_Succ'][0]['Target_PrimaryRoleId_uniqueRoleId"
+								}
+							}
+						]
+					}
 				},
 				"inputs": [
 					{
