@@ -11,7 +11,7 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"fileName": {
-					"value": "@concat('Test_', formatDateTime(utcnow(), 'yyyy-dd-MM'),'.csv')\n",
+					"value": "@concat('Test_', convertFromUtc(utcnow(), 'Pacific Standard Time'),'.csv')",
 					"type": "Expression"
 				},
 				"folderPath": "Target_dir",
