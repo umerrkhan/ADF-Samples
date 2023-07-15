@@ -49,6 +49,89 @@
 					"enableStaging": false,
 					"translator": {
 						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "['Name']"
+								},
+								"sink": {
+									"name": "Name"
+								}
+							},
+							{
+								"source": {
+									"path": "['OrgId']"
+								},
+								"sink": {
+									"name": "OrgId"
+								}
+							},
+							{
+								"source": {
+									"path": "['Status']"
+								},
+								"sink": {
+									"name": "Status"
+								}
+							},
+							{
+								"source": {
+									"path": "['OrgRecordClass']"
+								},
+								"sink": {
+									"name": "OrgRecordClass"
+								}
+							},
+							{
+								"source": {
+									"path": "['PostCode']"
+								},
+								"sink": {
+									"name": "PostCode"
+								}
+							},
+							{
+								"source": {
+									"path": "['LastChangeDate']"
+								},
+								"sink": {
+									"name": "LastChangeDate"
+								}
+							},
+							{
+								"source": {
+									"path": "['PrimaryRoleId']"
+								},
+								"sink": {
+									"name": "PrimaryRoleId"
+								}
+							},
+							{
+								"source": {
+									"path": "['PrimaryRoleDescription']"
+								},
+								"sink": {
+									"name": "PrimaryRoleDescription"
+								}
+							},
+							{
+								"source": {
+									"path": "['OrgLink']"
+								},
+								"sink": {
+									"name": "OrgLink"
+								}
+							},
+							{
+								"source": {
+									"path": "$['CurrentOrgId']"
+								},
+								"sink": {
+									"name": "CurrentOrgId"
+								}
+							}
+						],
+						"collectionReference": "$['Organisations']",
 						"mapComplexValuesToString": false
 					}
 				},
@@ -143,7 +226,7 @@
 								}
 							}
 						],
-						"collectionReference": "$[Organisation]",
+						"collectionReference": "$[Organisations]",
 						"mapComplexValuesToString": true
 					}
 				},
