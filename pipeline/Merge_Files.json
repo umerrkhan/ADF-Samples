@@ -34,7 +34,7 @@
 						},
 						"formatSettings": {
 							"type": "DelimitedTextWriteSettings",
-							"maxRowsPerFile": 4999,
+							"maxRowsPerFile": 50,
 							"quoteAllText": true,
 							"fileExtension": ".txt"
 						}
