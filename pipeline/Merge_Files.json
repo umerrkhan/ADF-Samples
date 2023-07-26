@@ -32,7 +32,7 @@
 						"referenceName": "DS_Generic_Path",
 						"type": "DatasetReference",
 						"parameters": {
-							"FilePath": "samplesfiles"
+							"FilePath": "source"
 						}
 					}
 				]
